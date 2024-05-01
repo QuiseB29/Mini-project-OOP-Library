@@ -83,22 +83,22 @@ def display_users(library):
     print("Users in the library:")
     for user_name, user in library.items():
         print(f"User: {user_name}, Library ID: {user.library_id}")
-
-def add_author(library):
-    name = input("Enter author's name:")
-    biography = input("Enter author's biography:")
-    library[name] = Author(name, biography)
+class Author(Book):
+    def add_author(library):
+        name = input("Enter author's name:")
+        biography = input("Enter author's biography:")
+        library[name] = Author(name, biography)
 
 def display_authors(library):
     print("Authors in the library:")
     for author_name, author in library.items():
         print(f"Author: {author_name}, Biography: {author.biography}")
-
-def add_genre(library):
-    name = input("Enter genre name:")
-    description = input("Enter genre description:")
-    category = input("Enter genre category:")
-    library[name] = Genre(name, description, category)
+class Genre(Book):
+    def add_genre(library):
+        name = input("Enter genre name:")
+        description = input("Enter genre description:")
+        category = input("Enter genre category:")
+        library[name] = Genre(name, description, category)
 
 def display_genres(library):
     print("Genres in the library:")
